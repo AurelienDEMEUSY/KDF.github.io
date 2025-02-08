@@ -1,0 +1,20 @@
+{
+  "name": "kdf.github.io",
+  "version": "1.0.0",
+  "description": "![taker academy logo](https://github.com/Taker-Academy/KeDuFron-t/assets/86067803/597e2e8c-c815-45e0-a243-715dcee4a742)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AurelienDEMEUSY/KDF.github.io.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AurelienDEMEUSY/KDF.github.io/issues"
+  },
+  "homepage": "https://aureliendemeusy.github.io/KDF.github.io"
+}
