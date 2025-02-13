@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Commande - KDF Shop</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <header>
+        <h1>Validation de votre commande</h1>
+    </header>
+    <form id="checkout-form">
+        <input type="text" id="name" placeholder="Nom" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="text" id="address" placeholder="Adresse de livraison" required>
+        <button type="submit">Commander</button>
+    </form>
+    <script src="../js/cart.js"></script>
+    <script>
+        document.getElementById("checkout-form").addEventListener("submit", async (e) => {
+            e.preventDefault();
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const address = document.getElementById("address").value;
+            const cart = getCart();
+
+            if (cart.length === 0) {
+                alert("Votre panier est vide !");
+                return;
+            }
+
+            const orderData = { name, email, address, cart };
+
+            try {
+                const response = await fetch("https://api.kedufront.juniortaker.com/order/", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(orderData)
+                });
+
+                const result = await response.json();
+                alert("Commande validée ! Numéro : " + result.command_id);
+                localStorage.removeItem("cart");
+                window.location.href = "../public/index.html";
+            } catch (error) {
+                alert("Erreur lors de la commande.");
+            }
+        });
+    </script>
+</body>
+</html>

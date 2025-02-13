@@ -1,0 +1,68 @@
+/* Responsive Design */
+@media (max-width: 768px) {
+    .header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .nav {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .nav a {
+        margin: 0.5rem 0;
+    }
+
+    .nav-toggle {
+        display: flex;
+    }
+
+    .search-bar input {
+        width: 100%;
+    }
+
+    .main-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .product {
+        display: block;
+        width: 100%;
+    }
+
+    .product .product-card {
+        width: 100%;
+    }
+
+    .cart {
+        flex: 1 1 100%;
+    }
+
+    .cart .product-card {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cart .product-card img {
+        width: 100%;
+        margin-bottom: 1rem;
+    }
+
+    .cart .product-card div {
+        text-align: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .product .product-card {
+        width: 100%;
+    }
+
+    .footer {
+        flex-direction: column;
+        text-align: center;
+    }
+}
