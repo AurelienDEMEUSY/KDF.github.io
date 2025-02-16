@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Commande - KDF Shop</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
@@ -16,7 +16,7 @@
         <input type="text" id="address" placeholder="Adresse de livraison" required>
         <button type="submit">Commander</button>
     </form>
-    <script src="../js/cart.js"></script>
+    <script src="cart.js"></script>
     <script>
         document.getElementById("checkout-form").addEventListener("submit", async (e) => {
             e.preventDefault();
@@ -42,7 +42,7 @@
                 const result = await response.json();
                 alert("Commande validée ! Numéro : " + result.command_id);
                 localStorage.removeItem("cart");
-                window.location.href = "../index.html";
+                window.location.href = "index.html";
             } catch (error) {
                 alert("Erreur lors de la commande.");
             }
