@@ -42,7 +42,7 @@
                 const result = await response.json();
                 alert("Commande validée ! Numéro : " + result.command_id);
                 localStorage.removeItem("cart");
-                window.location.href = "../public/index.html";
+                window.location.href = "../index.html";
             } catch (error) {
                 alert("Erreur lors de la commande.");
             }
